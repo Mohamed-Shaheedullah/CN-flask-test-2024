@@ -4,6 +4,12 @@
 <!-- above lines inherit properties from base,html -->
 <body>
     <h1>This is the new page with HTML!</h1>
+
+    <ul>
+        {% for band in favourite_bands %}
+        <li>{{ band }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
 {% endblock %}

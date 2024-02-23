@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template,  redirect, request, url_for
+from favourites import favourite_bands
 
 my_view = Blueprint("my_view", __name__)
 
@@ -8,7 +9,7 @@ def index():
 
 @my_view.route("/page2")
 def page2():
-    return render_template("page2.html")
+    return render_template("page2.html", favourite_bands = favourite_bands)
 
 @my_view.route("/page3")
 def page3():
