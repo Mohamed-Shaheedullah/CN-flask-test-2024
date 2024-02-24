@@ -10,6 +10,12 @@
         <li>{{ band }}</li>
         {% endfor %}
     </ul>
+
+<form action="/page2" method="post">
+    <input type="text" name="add_band" id="band_add" placeholder="enter a band">
+    <button type="submit">Submit a band</button>
+</form>
+
 </body>
 </html>
 {% endblock %}

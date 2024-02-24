@@ -7,8 +7,12 @@ my_view = Blueprint("my_view", __name__)
 def index():
     return render_template("index.html")
 
-@my_view.route("/page2")
+@my_view.route("/page2", methods=["GET", "POST"])
 def page2():
+    if request.method == "POST":
+        new_band = request.form["add_band"]
+        favourite_bands.append(new_band)
+
     return render_template("page2.html", favourite_bands = favourite_bands)
 
 @my_view.route("/page3")
